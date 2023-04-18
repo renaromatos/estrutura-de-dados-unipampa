@@ -6,6 +6,11 @@ public class Vetor {
     private int totalAlunos;
 
     public void adiciona(Aluno aluno){
+        for(int i = 0; i < alunos.length; i++){
+            if(aluno.equals(alunos[i])){
+                return;
+            }
+        }
         if(totalAlunos == alunos.length){
             return;
         }

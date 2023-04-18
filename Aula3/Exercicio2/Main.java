@@ -9,6 +9,7 @@ public class Main {
 
         vetor.adiciona(aluno1);
         vetor.adiciona(aluno2);
+        vetor.adiciona(aluno2);
         System.out.println(vetor.contem(aluno1));
         System.out.println(vetor.contem(aluno2));
         System.out.println(vetor.tamanho());

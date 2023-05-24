@@ -1,6 +1,7 @@
 package Aula6.Atividade6;
 
 public class Noh {
+    private Object aluno;
     private int info;
     private Noh ant;
     private Noh prox;
@@ -10,6 +11,14 @@ public class Noh {
         this.ant = null;
         this.prox = null;
     }
+
+    public Noh(Object aluno){
+        this.aluno = aluno;
+        this.ant = null;
+        this.prox = null;
+    }
+
+    
 
     public int getInfo() {
         return info;
@@ -33,6 +42,14 @@ public class Noh {
 
     public void setProx(Noh n) {
         this.prox = n;
+    }
+
+    public Object getAluno() {
+        return aluno;
+    }
+
+    public void setAluno(Object aluno) {
+        this.aluno = aluno;
     }
 
     

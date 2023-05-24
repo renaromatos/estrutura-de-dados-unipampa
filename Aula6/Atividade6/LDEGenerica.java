@@ -1,18 +1,18 @@
 package Aula6.Atividade6;
 
-public class LDE implements Lista{
+public class LDEGenerica implements ListaAlunos{
     private Noh inicio;
     private Noh fim;
 
-    public LDE(){
+    public LDEGenerica(){
         this.inicio = null;
         this.fim = null;
     }
 
     @Override
-    public void insereInicio(int info) {
-        Noh novo = new Noh(info);
-        
+    public void insereInicio(Object aluno) {
+        Noh novo = new Noh(aluno);
+
         if(inicio == null){
             inicio = novo;
             fim = novo;
@@ -25,9 +25,9 @@ public class LDE implements Lista{
     }
 
     @Override
-    public void insereFim(int info) {
-        Noh novo = new Noh(info);
-
+    public void insereFim(Object aluno) {
+        Noh novo = new Noh(aluno);
+        
         if(fim == null){
             inicio = novo;
             fim = novo;
@@ -43,26 +43,26 @@ public class LDE implements Lista{
     public boolean estahVazia() {
         if(inicio != null && fim != null){
             return false;
-        }
+        }    
         else{
             return true;
         }
     }
 
-    public void busca(int info){
+    public void busca(Object aluno){
         Noh p = inicio;
-
-        while(p != null && p.getInfo() != info){
+        
+        while(p != null && p.getAluno() != aluno){
             p = p.getProx();
-            if(p.getInfo() == info){
-                remove(p.getInfo());
+            if(p.getAluno() == aluno){
+                remove(p.getAluno());
             }
         }
-        throw new IllegalArgumentException("Elemento não encontrado");
+        throw new IllegalArgumentException("Aluno não econtrado.");
     }
 
     @Override
-    public boolean remove(int info) {
+    public boolean remove(Object aluno) {
         Noh p = inicio;
 
         if(p == inicio){
@@ -92,26 +92,27 @@ public class LDE implements Lista{
         while(n != null){
             tam++;
             n = n.getProx();
-        }
+        }    
         return tam;
     }
 
     @Override
-    public void imprimeListaInicioEFim(){
+    public void imprimeListaInicioEFim() {
         Noh n = inicio;
-
+        
         System.out.println("Imprimindo do inicio:");
         while(n != null){
-            System.out.print(n.getInfo() + " ");
+            System.out.println(n.getAluno() + " ");
             n = n.getProx();
         }
 
         System.out.println("\nImprimindo do fim:");
         n = fim;
         while(n != null){
-            System.out.print(n.getInfo() + " ");
+            System.out.println(n.getAluno() + " ");
             n = n.getAnt();
         }
         System.out.println();
     }
+    
 }

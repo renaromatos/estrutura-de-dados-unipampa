@@ -1,19 +1,12 @@
-package Aula6.Atividade6;
+package Prova1.Questao5;
 
 public class Noh {
-    private Object aluno;
     private int info;
     private Noh ant;
     private Noh prox;
 
     public Noh(int info){
         this.info = info;
-        this.ant = null;
-        this.prox = null;
-    }
-
-    public Noh(Object aluno){
-        this.aluno = aluno;
         this.ant = null;
         this.prox = null;
     }
@@ -40,14 +33,6 @@ public class Noh {
 
     public void setProx(Noh n) {
         this.prox = n;
-    }
-
-    public Object getAluno() {
-        return aluno;
-    }
-
-    public void setAluno(Object aluno) {
-        this.aluno = aluno;
     }
     
 }

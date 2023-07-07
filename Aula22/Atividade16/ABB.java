@@ -118,7 +118,7 @@ public class ABB {
 
     //metodo de impressao em profundidade
     public void printPosOrdem(){
-        printPreOrdem(this.raiz);
+        printPosOrdem(this.raiz);
     }
 
     private void printPosOrdem(Noh noh){
